@@ -143,9 +143,8 @@ testString = function(input) {
 
 	// Level 14: With R=0, B=1, subtract 1 from input
 
-	if (input.length == 0) return null; // Empty string not considered valid on numeric problems
-
 	var num = mhelper.tapeToNumber(input);
+	if (num == 0) return null; // Subtract 1 level promise input >= 1
 	num -= 1;
 	return mhelper.numberToTape(num);
 
