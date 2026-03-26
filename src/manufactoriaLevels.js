@@ -321,7 +321,7 @@ var level28 = `testString = function(input) {
 	// Level 28: Return the input, with the last symbol moved to the front
 
 	if (input.length == 0) return "";
-	return input.substr(0, input.length - 1) + input[input.length - 1];
+	return input[input.length - 1] + input.substr(0, input.length - 1);
 
 }`;
 
