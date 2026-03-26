@@ -274,7 +274,10 @@ class App {
                 if (!pass) failed.push({input: t, correct: specResult, actual: runner.accept});
             } else if (typeof(specResult) == "string") {
                 var runnerTape = runner.tape.toString();
-                if (numericEquivalence) {
+				if (!runner.accept) {
+					runnerTape = false;
+					pass = false;
+				} else if (numericEquivalence) {
                     pass = (mhelper.tapeToNumber(specResult) == mhelper.tapeToNumber(runnerTape));
                 } else {
                     pass = (specResult == runnerTape);
