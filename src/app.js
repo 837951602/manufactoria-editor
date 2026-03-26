@@ -278,7 +278,7 @@ class App {
 					runnerTape = false;
 					pass = false;
 				} else if (numericEquivalence) {
-                    pass = (mhelper.tapeToNumber(specResult) == mhelper.tapeToNumber(runnerTape));
+                    pass = (specResult.replace(/(BR+)|R/g,'$1') == runnerTape.replace(/(BR+)|R/g,'$1'));
                 } else {
                     pass = (specResult == runnerTape);
                 }
